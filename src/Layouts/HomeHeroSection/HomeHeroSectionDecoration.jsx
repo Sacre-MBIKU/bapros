@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HomeHeroSectionDecoration = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;

@@ -21,6 +21,27 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${BACKGROUND_COLOR};
         display: flex;
         justify-content: center;
+        overflow-x: hidden;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    button {
+        border-style: none;
+    }
+
+    input {
+        ::placeholder {
+        color: ${FIRST_COLOR};
+        font-weight: 800;
+        opacity: 1;
+    }
     }
 `;
 export default GlobalStyles;

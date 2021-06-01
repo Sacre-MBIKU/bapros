@@ -7,5 +7,6 @@ const HomeDecoration = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
 `
 export default HomeDecoration;
