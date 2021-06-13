@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
+  BACKGROUND_COLOR,
   FIRST_COLOR,
   SECOND_COLOR,
 } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
@@ -21,6 +22,21 @@ const SearchBarDecoration = styled.div`
     font-size: 0.7rem;
     padding: 0 1rem;
     opacity: 1;
+
+    ${({ secondAppMode }) =>
+      secondAppMode
+        ? css`
+            border: 0.5px solid ${BACKGROUND_COLOR};
+          `
+        : ""}
+    @media (max-width: 768px) {
+      ${({ secondAppMode }) =>
+        secondAppMode
+          ? css`
+              border: 0.5px solid ${SECOND_COLOR};
+            `
+          : ""}
+    }
   }
 
   input:focus {
@@ -40,6 +56,20 @@ const SearchBarDecoration = styled.div`
     font-size: 1rem;
     cursor: pointer;
     color: ${FIRST_COLOR};
+    ${({ secondAppMode }) =>
+      secondAppMode
+        ? css`
+            border: 0.5px solid ${BACKGROUND_COLOR};
+          `
+        : ""}
+    @media (max-width: 768px) {
+      ${({ secondAppMode }) =>
+        secondAppMode
+          ? css`
+              border: 0.5px solid ${SECOND_COLOR};
+            `
+          : ""}
+    }
   }
 
   @media (min-width: 768px) {

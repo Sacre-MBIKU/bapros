@@ -1,5 +1,5 @@
-//On va initialiser le projet en donnant les styles principaux
 import { Switch } from "react-router-dom";
+import CinemByGenre from "./Pages/CinemByGenre/CinemByGenre";
 import Home from "./Pages/Home/Home";
 import GlobalStyles from "./Shared_Components/GlobalStyles.jsx/GlobalStyles";
 
@@ -8,7 +8,8 @@ const App = () => {
     <>
       <GlobalStyles />
       <Switch>
-        <Home exact to="/" />
+        <Home exact path="/" />
+        <CinemByGenre exact path="/cinemabygenre" />
       </Switch>
     </>
   );

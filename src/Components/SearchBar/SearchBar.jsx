@@ -1,9 +1,9 @@
 import SearchBarDecoration from "./SearchBarDecoration";
 
-const SearchBar = () => {
+const SearchBar = ({ secondAppMode }) => {
   return (
     <>
-      <SearchBarDecoration>
+      <SearchBarDecoration secondAppMode={secondAppMode}>
         <input
           type="search"
           name="input-search"

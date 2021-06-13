@@ -1,9 +1,9 @@
 import MenuLinksDecoration from "./MenuLinksDecoration";
 import {Link} from "react-router-dom";
 
-const MenuLinks = () => {
+const MenuLinks = ({secondAppMode}) => {
     return(
-        <MenuLinksDecoration>
+        <MenuLinksDecoration secondAppMode = {secondAppMode}>
             <Link className ="menu-link" to = "/">
                 Séries
             </Link>

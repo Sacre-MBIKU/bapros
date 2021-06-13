@@ -1,8 +1,12 @@
 import MenuHamburgerDecoration from "./MenuHamburgerDecoration";
 
-const MenuHamburger = ({isDisplayed, onClick}) => {
+const MenuHamburger = ({ isDisplayed, onClick, secondAppMode }) => {
   return (
-    <MenuHamburgerDecoration onClick = {onClick} isDisplayed = {isDisplayed}>
+    <MenuHamburgerDecoration
+      secondAppMode={secondAppMode}
+      onClick={onClick}
+      isDisplayed={isDisplayed}
+    >
       <span></span>
       <span></span>
       <span></span>

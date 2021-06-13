@@ -1,5 +1,8 @@
-import styled from "styled-components";
-import { SECOND_COLOR } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
+import styled, { css } from "styled-components";
+import {
+  BACKGROUND_COLOR,
+  SECOND_COLOR,
+} from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
 
 const MenuHamburgerDecoration = styled.i`
   @media (max-width: 768px) {
@@ -16,6 +19,13 @@ const MenuHamburgerDecoration = styled.i`
       height: 0.3rem;
       background-color: ${SECOND_COLOR};
       border-radius: 0.1rem;
+
+      ${({ secondAppMode }) =>
+        secondAppMode
+          ? css`
+              background-color: ${BACKGROUND_COLOR};
+            `
+          : ""}
     }
   }
 `;

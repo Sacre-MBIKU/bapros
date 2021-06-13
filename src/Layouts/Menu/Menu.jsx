@@ -3,12 +3,12 @@ import SearchBar from "../../Components/SearchBar/SearchBar";
 import CrossIcon from "../../Shared_Components/CrossIcon/CrossIcon";
 import MenuDecoration from "./MenuDecoration";
 
-const Menu = ({onClick, isDisplayed}) => {
+const Menu = ({secondAppMode, onClick, isDisplayed}) => {
   return (
     <MenuDecoration  isDisplayed = {isDisplayed}>
       <CrossIcon onClick = {onClick} />
-      <MenuLinks />
-      <SearchBar />
+      <MenuLinks secondAppMode = {secondAppMode}/>
+      <SearchBar secondAppMode = {secondAppMode}/>
     </MenuDecoration>
   );
 };

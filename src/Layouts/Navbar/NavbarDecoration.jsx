@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { BACKGROUND_COLOR } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
+import { BACKGROUND_COLOR, SECOND_COLOR } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
 
 const NavbarDecoration = styled.nav`
   width: 100%;
@@ -16,6 +16,13 @@ const NavbarDecoration = styled.nav`
     navBarYPosition
       ? css`
           background-color: ${BACKGROUND_COLOR};
+        `
+      : ""}
+      
+      ${({ secondAppMode }) =>
+    secondAppMode
+      ? css`
+          background-color: ${SECOND_COLOR};
         `
       : ""}
 `;
