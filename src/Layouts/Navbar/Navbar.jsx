@@ -4,7 +4,7 @@ import Logo from "../../Shared_Components/GlobalStyles.jsx/Logo/Logo";
 import Menu from "../Menu/Menu";
 import NavbarDecoration from "./NavbarDecoration";
 
-const Navbar = () => {
+const Navbar = ({ navBarYPosition }) => {
   const [smallDevice, setSmallDevice] = useState(false);
 
   const toggleDevice = () => {
@@ -12,11 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarDecoration>
+    <NavbarDecoration navBarYPosition={navBarYPosition}>
       <Logo />
-
-      <MenuHamburger onClick={toggleDevice} isDisplayed = {smallDevice}/>
-      <Menu onClick={toggleDevice} isDisplayed = {smallDevice}/>
+      <MenuHamburger onClick={toggleDevice} isDisplayed={smallDevice} />
+      <Menu onClick={toggleDevice} isDisplayed={smallDevice} />
     </NavbarDecoration>
   );
 };
