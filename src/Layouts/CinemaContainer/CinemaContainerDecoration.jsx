@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { SECOND_COLOR } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
 
 const CinemaContainerDecoration = styled.section`
   width: 100%;
@@ -21,6 +20,11 @@ const CinemaContainerDecoration = styled.section`
     width: 100%;
     padding: 0 25%;
     margin-top: 2rem;
+  }
+
+  @media(min-width: 819px) {
+    width: ${({width}) => width ?
+    "65%" : ""};
   }
 `;
 

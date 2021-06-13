@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CardsContainerDecoration = styled.div`
   position: relative;
-  width: 300%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
