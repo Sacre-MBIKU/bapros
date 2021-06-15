@@ -4,6 +4,7 @@ import PageTitle from "../../Shared_Components/PageTitle/PageTitle";
 import CrossIcon from "../../Shared_Components/CrossIcon/CrossIcon";
 import CinemaCard from "../../Shared_Components/CinemaCard/CinemaCard";
 import banner from "../../assets/backgrounds/banner.jpg";
+import releaer from "../../assets/backgrounds/releaser.jpg";
 const CinemaDescriptionBox = ({ pageTitle }) => {
   return (
     <CinemaDescriptionBoxDescriptionDecoration>
@@ -43,13 +44,12 @@ const CinemaDescriptionBox = ({ pageTitle }) => {
       <div className="cinema-overview-infos">
         <div className="cinema-overview--releaser">
           <h4 className="releaser-title">Réalisateur</h4>
-          <CinemaCard movieProperty={[]} />
-          <h4 className="releaser-name">Jon WATTS</h4>
+          <CinemaCard movieProperty={[]} banner={releaer} />
         </div>
         <ul className="cinema-overview--more-info">
-            <li>Catégorie : Action / Aventure</li>
-            <li>Notes : 4.3</li>
-            <li>Compagnie : Marvel</li>
+          <li>Catégorie : Action / Aventure</li>
+          <li>Notes : 4.3</li>
+          <li>Compagnie : Marvel</li>
         </ul>
       </div>
     </CinemaDescriptionBoxDescriptionDecoration>

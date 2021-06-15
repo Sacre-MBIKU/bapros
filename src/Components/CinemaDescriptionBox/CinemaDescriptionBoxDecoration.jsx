@@ -47,10 +47,43 @@ const CinemaDescriptionBoxDecoration = styled.article`
     }
 
     .cinema-overview--content {
-        width: 70%;
+      width: 70%;
       font-size: 1rem;
       color: ${FIRST_COLOR};
       min-height: auto;
+    }
+  }
+
+  .cinema-overview-infos {
+    display: flex;
+    width: 100%;
+    padding: 0 10%;
+    justify-content: space-between;
+    height: 26rem;
+
+    .cinema-overview--releaser {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: ${FIRST_COLOR};
+
+      .releaser-title {
+        font-size: 1.2rem;
+      }
+
+    }
+
+    .cinema-overview--more-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: ${FIRST_COLOR};
+      font-size: 1.1rem;
+      li {
+          padding-left: 0.5rem;
+          border-left: 3px solid ${SECOND_COLOR};
+      }
     }
   }
 `;
