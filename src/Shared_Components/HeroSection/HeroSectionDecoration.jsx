@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import bannerSection from "../../assets/backgrounds/heroSection.jpg";
 
 const HeroSectionDecoration = styled.section`
@@ -12,6 +12,13 @@ const HeroSectionDecoration = styled.section`
     url("${({ banner }) => banner || bannerSection}");
   background-size: cover;
   background-position: center;
+
+  ${({modalBox}) => modalBox ?
+  css`min-width : 100%;
+    height: 70vh;
+  ` : 
+  ""
+}
 `;
 
 export default HeroSectionDecoration;

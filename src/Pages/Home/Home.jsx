@@ -29,6 +29,7 @@ const Home = () => {
       <CinemaContainer
         cinemaGenre="A venir"
         numberOfCards={cinemaNumberToList}
+        onClick={handleCinemaDescriptionState}
       />
       <CinemaDescription
         cinemaDescription={cinemaDescription}
