@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import CardsContainer from "../../Components/CardsContainer/CardsContainer";
 import TitleCategory from "../../Components/TitleCategory/TitleCategory";
 import Button from "../../Shared_Components/Button/Button";
@@ -16,7 +17,7 @@ const CinemaContainer = ({
       {seeMoreButton !== false ? (
         <>
           <div className="see-more-container">
-            <Button>voir plus</Button>
+            <Link to = "/cinemaByGenre"><Button>voir plus</Button></Link>
           </div>
           <div className="border-bottom">
             <hr />

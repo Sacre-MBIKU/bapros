@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { SECOND_COLOR } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
+import styled, { css } from "styled-components";
 
 const CinemByGenreDecoration = styled.div`
   width: 100%;
@@ -10,7 +9,7 @@ const CinemByGenreDecoration = styled.div`
   z-index: 100;
 
   main {
-    margin-top: 15%;
+    margin-top: 12%;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -25,12 +24,6 @@ const CinemByGenreDecoration = styled.div`
       position: relative;
     }
 
-    .filter {
-      width: 32%;
-      height: 10rem;
-      background-color: #0a0c1d;
-      border-left: 3px solid ${SECOND_COLOR};
-    }
 
     .filter-hamburger {
       display: none;
@@ -43,6 +36,10 @@ const CinemByGenreDecoration = styled.div`
         font-weight: bold;
         font-size: .9rem;
         cursor: pointer;
+
+        ${({genreListMenuState}) => genreListMenuState ? 
+        css `display : none` :
+        ""}
       }
     }
 

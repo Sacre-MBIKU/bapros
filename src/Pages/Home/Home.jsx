@@ -5,7 +5,7 @@ import HomeDecoration from "./HomeDecoration";
 
 const Home = () => {
   const [navBarYPosition, setNavBarYPosition] = useState(false);
-
+  const CinemaNumberToList = 4;
   const getNavBarPosition = () => {
     const { scrollTop } = document.documentElement;
     if (scrollTop >= 100) {
@@ -19,8 +19,8 @@ const Home = () => {
     <HomeDecoration>
       {window.addEventListener("scroll", getNavBarPosition)}
       <HomeHeroSection navBarYPosition={navBarYPosition} />
-      <CinemaContainer cinemaGenre="A la une" numberOfCards={3} />
-      <CinemaContainer cinemaGenre="A venir" numberOfCards={3} />
+      <CinemaContainer cinemaGenre="A la une" numberOfCards={CinemaNumberToList} />
+      <CinemaContainer cinemaGenre="A venir" numberOfCards={CinemaNumberToList} />
     </HomeDecoration>
   );
 };

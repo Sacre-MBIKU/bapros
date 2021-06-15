@@ -4,10 +4,11 @@ import CardsContainerDecoration from "./CardsContainerDecoration";
 const CardsContainer = ({ numberOfCards, width }) => {
   return (
     <CardsContainerDecoration width={width}>
-      {numberOfCards === 3 ? (
+      {numberOfCards === 4 ? (
         <>
           <CinemaCard loading={true} title="title 1" movieProperty={[]} />
           <CinemaCard loading={true} title="title 2" movieProperty={[]} />
+          <CinemaCard loading={true} title="title 3" movieProperty={[]} />
           <CinemaCard loading={true} title="title 3" movieProperty={[]} />
         </>
       ) : (
