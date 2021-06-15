@@ -7,7 +7,7 @@ const CinemaDescriptionDecoration = styled.div`
   bottom: 0;
   right: 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 10% 20% 0 20%;
   background-color: #080a16b2;
   z-index: 40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;

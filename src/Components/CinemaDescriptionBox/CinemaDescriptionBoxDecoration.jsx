@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import {
   BACKGROUND_COLOR,
+  FIRST_COLOR,
   SECOND_COLOR,
 } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
 import bannerButton from "../../assets/icons/play.svg";
 const CinemaDescriptionBoxDecoration = styled.article`
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   background-color: ${BACKGROUND_COLOR};
   border: 3px solid ${SECOND_COLOR};
   display: flex;
@@ -26,6 +27,31 @@ const CinemaDescriptionBoxDecoration = styled.article`
     background-repeat: no-repeat;
     background-color: transparent;
     cursor: pointer;
+  }
+
+  .cinema-overview-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    .cinema-overview--title {
+      font-size: 1.8rem;
+      color: ${FIRST_COLOR};
+      border-bottom: 3px solid ${SECOND_COLOR};
+      height: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .cinema-overview--content {
+        width: 70%;
+      font-size: 1rem;
+      color: ${FIRST_COLOR};
+      min-height: auto;
+    }
   }
 `;
 
