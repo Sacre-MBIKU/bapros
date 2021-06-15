@@ -9,15 +9,18 @@ const CinemaContainer = ({
   cinemaGenre,
   width,
   seeMoreButton,
+  onClick,
 }) => {
   return (
     <CinemaContainerDecoration width={width}>
       <TitleCategory title={cinemaGenre} />
-      <CardsContainer numberOfCards={numberOfCards} />
+      <CardsContainer numberOfCards={numberOfCards} onClick={onClick} />
       {seeMoreButton !== false ? (
         <>
           <div className="see-more-container">
-            <Link to = "/cinemaByGenre"><Button>voir plus</Button></Link>
+            <Link to="/cinemaByGenre">
+              <Button>voir plus</Button>
+            </Link>
           </div>
           <div className="border-bottom">
             <hr />
