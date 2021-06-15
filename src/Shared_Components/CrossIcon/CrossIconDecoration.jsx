@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const CrossIconDecoration = styled.li`
   width: auto;
@@ -15,9 +15,34 @@ const CrossIconDecoration = styled.li`
     height: auto;
   }
 
-  @media (max-width: 768px) {
-    display: flex;
+  @media (max-width: 828px) {
+    display: ${({ genreListMenuState }) =>
+      genreListMenuState === true ? "flex" : "none"};
     transition: all 1s ease;
+
+    ${({ genreListMenuState }) =>
+      genreListMenuState === true
+        ? css `
+        position : absolute;
+        top: -1.5%;
+        right: 0;
+      `
+        : ""}
+  }
+
+  @media (max-width: 768px) {
+    display: ${({ genreListMenuState }) =>
+      genreListMenuState === true ? "flex" : "none"};
+    transition: all 1s ease;
+
+    ${({ genreListMenuState }) =>
+      genreListMenuState === true
+        ? css `
+        position : absolute;
+        top: -1.5%;
+        right: 0;
+      `
+        : ""}
   }
 `;
 

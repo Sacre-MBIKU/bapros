@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { BACKGROUND_COLOR, FIRST_COLOR, SECOND_COLOR } from "../GlobalStyles";
 
-const LogoDecoration = styled.a`
+const LogoDecoration = styled.div`
   font-weight: bold;
   font-size: 1.4rem;
   .logo-first-part {

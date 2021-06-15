@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FIRST_COLOR, SECOND_COLOR } from "../GlobalStyles.jsx/GlobalStyles";
 
-const ButtonDecoration = styled.button`
+const ButtonDecoration = styled.span`
     background-color: ${SECOND_COLOR};
     color: ${FIRST_COLOR};
     font-size: 0.9rem;
