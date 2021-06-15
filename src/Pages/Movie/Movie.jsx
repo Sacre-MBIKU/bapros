@@ -1,17 +1,19 @@
 import useScroll from "../../hooks/useScroll";
-import CinemaContainer from "../../Layouts/CinemaContainer/CinemaContainer";
 import HomeHeroSection from "../../Layouts/HomeHeroSection/HomeHeroSection";
-import HomeDecoration from "./HomeDecoration";
-
-
-const Home = () => {
+import MovieDecoration from "./MovieDecoration";
+import CinemaContainer from "../../Layouts/CinemaContainer/CinemaContainer";
+import banner from "../../assets/backgrounds/hero1.png";
+const Movie = () => {
   const [navBarYPosition, getNavBarPosition] = useScroll(false);
   const CinemaNumberToList = 4;
-
   return (
-    <HomeDecoration>
+    <MovieDecoration>
       {window.addEventListener("scroll", getNavBarPosition)}
-      <HomeHeroSection navBarYPosition={navBarYPosition} pageTitle = "Tout le septième art dans ton "/>
+      <HomeHeroSection
+        navBarYPosition={navBarYPosition}
+        banner={banner}
+        pageTitle="Tout sur tes films préférés dans ton "
+      />
       <CinemaContainer
         cinemaGenre="A la une"
         numberOfCards={CinemaNumberToList}
@@ -20,8 +22,8 @@ const Home = () => {
         cinemaGenre="A venir"
         numberOfCards={CinemaNumberToList}
       />
-    </HomeDecoration>
+    </MovieDecoration>
   );
 };
 
-export default Home;
+export default Movie;

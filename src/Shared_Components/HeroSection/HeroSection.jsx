@@ -1,8 +1,8 @@
 import HeroSectionDecoration from "./HeroSectionDecoration";
 
-const HeroSection = ({children}) => {
+const HeroSection = ({children,  banner}) => {
     return(
-        <HeroSectionDecoration>
+        <HeroSectionDecoration banner= {banner}>
             {children}
         </HeroSectionDecoration>
     )

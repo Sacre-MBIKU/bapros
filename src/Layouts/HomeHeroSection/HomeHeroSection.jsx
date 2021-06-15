@@ -3,13 +3,14 @@ import PageTitle from "../../Shared_Components/PageTitle/PageTitle";
 import Navbar from "../Navbar/Navbar";
 import HomeHeroSectionDecoration from "./HomeHeroSectionDecoration";
 
-const HomeHeroSection = ({navBarYPosition}) => {
+const HomeHeroSection = ({ navBarYPosition, banner, pageTitle }) => {
   return (
     <HomeHeroSectionDecoration>
-      <HeroSection>
-        <Navbar navBarYPosition = {navBarYPosition}/>
+      <HeroSection banner={banner}>
+        <Navbar navBarYPosition={navBarYPosition} />
         <PageTitle>
-          Tout le septième art dans ton <span>portable</span>
+          {pageTitle}
+          <span>portable</span>
         </PageTitle>
       </HeroSection>
     </HomeHeroSectionDecoration>
