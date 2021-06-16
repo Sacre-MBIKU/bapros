@@ -1,8 +1,8 @@
 import HeroSectionDecoration from "./HeroSectionDecoration";
 
-const HeroSection = ({children,  banner}) => {
+const HeroSection = ({children,  banner, modalBox}) => {
     return(
-        <HeroSectionDecoration banner= {banner}>
+        <HeroSectionDecoration banner= {banner} modalBox = {modalBox}>
             {children}
         </HeroSectionDecoration>
     )

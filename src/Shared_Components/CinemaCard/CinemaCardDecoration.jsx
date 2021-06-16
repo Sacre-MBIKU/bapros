@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { SECOND_COLOR } from "../GlobalStyles.jsx/GlobalStyles";
 
 const loaderAnimation = keyframes`
   from {
@@ -12,7 +13,7 @@ const loaderAnimation = keyframes`
 `;
 
 const CinemaCardDecoration = styled.div`
-  min-width: 200px !important;
+  min-width: 270px !important;
   max-width: 300px !important;
   height: 360px;
   flex: 1;
@@ -26,10 +27,9 @@ const CinemaCardDecoration = styled.div`
   transition: all 300ms linear;
 
   .loader {
-    min-width: 200px;
-    width: 300px;
+    min-width: 270px;
     height: 360px;
-    background-color: #ff282922;
+    background-color: ${SECOND_COLOR};
     border: 1px solid white;
     &:before {
       content: "";
@@ -47,8 +47,7 @@ const CinemaCardDecoration = styled.div`
   }
 
   img {
-    min-width: 200px;
-    width: 300px;
+    min-width: 270px;
     height: 360px;
     border-radius: 5px;
     transition: 2s;
@@ -69,7 +68,7 @@ const CinemaCardDecoration = styled.div`
     background-color: #04090a73;
 
     .title {
-      background: tomato;
+      background: ${SECOND_COLOR};
       font-family: Poppins;
       color: #fff;
       text-align: center;

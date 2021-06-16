@@ -7,15 +7,18 @@ import HomeDecoration from "./HomeDecoration";
 
 const Home = () => {
   const [navBarYPosition, getNavBarPosition] = useScroll(false);
-  const [cinemaDescription, setCinemaDescription] = useState(true);
+  const [cinemaDescription, setCinemaDescription] = useState(false);
   const cinemaNumberToList = 4;
+  const API_NAME = process.env.API_NAME;
 
   const handleCinemaDescriptionState = () => {
     setCinemaDescription(!cinemaDescription);
+    window.scrollTo(0, 0);
   };
 
   return (
     <HomeDecoration>
+      {console.log(API_NAME)}
       {window.addEventListener("scroll", getNavBarPosition)}
       <HomeHeroSection
         navBarYPosition={navBarYPosition}
@@ -29,6 +32,7 @@ const Home = () => {
       <CinemaContainer
         cinemaGenre="A venir"
         numberOfCards={cinemaNumberToList}
+        onClick={handleCinemaDescriptionState}
       />
       <CinemaDescription
         cinemaDescription={cinemaDescription}

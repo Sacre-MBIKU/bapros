@@ -1,8 +1,8 @@
 import PageTitleDecoration from "./PageTitleDecoration";
 
-const PageTitle = ({children}) => {
+const PageTitle = ({children, modalBox}) => {
     return(
-        <PageTitleDecoration>
+        <PageTitleDecoration modalBox={modalBox}>
             {children}
         </PageTitleDecoration>
     )

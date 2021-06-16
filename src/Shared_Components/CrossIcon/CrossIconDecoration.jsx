@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const CrossIconDecoration = styled.li`
   width: auto;
   height: auto;
-  display: none;
+  display: ${({ modalCross }) => (modalCross ? "flex !important" : "none")};
   justify-content: center;
   align-items: center;
   padding: 0.2rem;
@@ -15,18 +15,50 @@ const CrossIconDecoration = styled.li`
     height: auto;
   }
 
+  ${({ modalCross }) =>
+    modalCross
+      ? css`
+          position: absolute;
+          top: 2%;
+          right: 5%;
+          z-index: 3000000;
+
+          img {
+            width: 2rem;
+          }
+          @media (max-width: 800px), (max-height: 1280px) {
+            top: .5%;
+    }
+        `
+      : ""}
+
+
+   @media (max-width : 412px), (max-height : 823px) {
+    ${({ modalCross }) =>
+    modalCross
+      ? css`
+          top: .3%;
+          right: 5%;
+
+          img {
+            width: 2rem;
+          }
+        `
+      : ""}
+   }   
+
   @media (max-width: 828px) {
     display: ${({ genreListMenuState }) =>
-      genreListMenuState === true ? "flex" : "none"};
+      genreListMenuState === true ? "flex " : "none"};
     transition: all 1s ease;
 
     ${({ genreListMenuState }) =>
       genreListMenuState === true
-        ? css `
-        position : absolute;
-        top: -1.5%;
-        right: 0;
-      `
+        ? css`
+            position: absolute;
+            top: -1.5%;
+            right: 0;
+          `
         : ""}
   }
 
@@ -37,11 +69,11 @@ const CrossIconDecoration = styled.li`
 
     ${({ genreListMenuState }) =>
       genreListMenuState === true
-        ? css `
-        position : absolute;
-        top: -1.5%;
-        right: 0;
-      `
+        ? css`
+            position: absolute;
+            top: -1.5%;
+            right: 0;
+          `
         : ""}
   }
 `;
