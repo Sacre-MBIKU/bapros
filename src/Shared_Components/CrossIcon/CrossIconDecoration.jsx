@@ -26,8 +26,26 @@ const CrossIconDecoration = styled.li`
           img {
             width: 2rem;
           }
+          @media (max-width: 800px), (max-height: 1280px) {
+            top: .5%;
+    }
         `
       : ""}
+
+
+   @media (max-width : 412px), (max-height : 823px) {
+    ${({ modalCross }) =>
+    modalCross
+      ? css`
+          top: .3%;
+          right: 5%;
+
+          img {
+            width: 2rem;
+          }
+        `
+      : ""}
+   }   
 
   @media (max-width: 828px) {
     display: ${({ genreListMenuState }) =>

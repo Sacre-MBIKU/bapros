@@ -4,7 +4,7 @@ const CinemaCard = ({banner, movieProperty, loading, onClick, title }) => {
   const urlPoster = banner;
   return (
     <>
-      <CinemaCardDecoration onClick={() => onClick}>
+      <CinemaCardDecoration onClick={onClick}>
         {loading === true ? (
           <div className="loader">
             <h3 className="title">{title}</h3>

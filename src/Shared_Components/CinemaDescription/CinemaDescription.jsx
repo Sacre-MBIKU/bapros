@@ -1,9 +1,9 @@
 import CinemaDescriptionDecoration from "./CinemaDescriptionDecoration";
 import CinemaDescriptionBox from "../../Components/CinemaDescriptionBox/CinemaDescriptionBox";
-const CinemaDescription = ({ cinemaDescription }) => {
+const CinemaDescription = ({ cinemaDescription, onClick }) => {
   return (
     <CinemaDescriptionDecoration cinemaDescription={cinemaDescription}>
-      <CinemaDescriptionBox pageTitle="Spiderman Homecoming" />
+      <CinemaDescriptionBox pageTitle="Spiderman Homecoming" onClick = {onClick} />
     </CinemaDescriptionDecoration>
   );
 };

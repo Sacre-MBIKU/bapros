@@ -5,11 +5,11 @@ import CrossIcon from "../../Shared_Components/CrossIcon/CrossIcon";
 import CinemaCard from "../../Shared_Components/CinemaCard/CinemaCard";
 import banner from "../../assets/backgrounds/banner.jpg";
 import releaer from "../../assets/backgrounds/releaser.jpg";
-const CinemaDescriptionBox = ({ pageTitle }) => {
+const CinemaDescriptionBox = ({ pageTitle , onClick, cinemaDescription}) => {
   return (
-    <CinemaDescriptionBoxDescriptionDecoration>
+    <CinemaDescriptionBoxDescriptionDecoration cinemaDescription = {cinemaDescription}>
       <HeroSection banner={banner} modalBox />
-      <CrossIcon modalCross />
+      <CrossIcon modalCross onClick = {onClick}/>
       <PageTitle modalBox>
         <span>{pageTitle}</span>
       </PageTitle>
@@ -51,6 +51,26 @@ const CinemaDescriptionBox = ({ pageTitle }) => {
           <li>Notes : 4.3</li>
           <li>Compagnie : Marvel</li>
         </ul>
+      </div>
+
+      <div className="cinema-overview-casting-actor">
+        <h4 className="casting-actor--title">Casting</h4>
+        <div className="casting-actor--list">
+          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCard movieProperty={[]} banner={releaer} />
+        </div>
+      </div>
+
+      <div className="cinema-overview--similar-cinema">
+        <h4 className="similar-cinema--title">Affiches Similaires</h4>
+        <div className="similar-cinema--list">
+          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCard movieProperty={[]} banner={releaer} />
+        </div>
       </div>
     </CinemaDescriptionBoxDescriptionDecoration>
   );
