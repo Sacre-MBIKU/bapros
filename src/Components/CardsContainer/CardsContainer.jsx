@@ -10,12 +10,11 @@ const CardsContainer = ({ numberOfCards, width, onClick, cinemaList }) => {
   }
   return (
     <CardsContainerDecoration width={width}>
+       {console.log("movies property part 1",cinemaList)}
       {cinemaListLimited.map((cinema, key) => {
         return (
           <CinemaCard
             onClick={onClick}
-            loading={true}
-            title="title 1"
             movieProperty={cinema}
             key={key}
           />

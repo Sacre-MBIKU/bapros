@@ -3,7 +3,7 @@ import styled from "styled-components";
 const CardsContainerDecoration = styled.div`
   position: relative;
   width: 100%;
-  height: auto;
+  min-height: 60vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -9,16 +9,15 @@ const CinemaContainer = ({
   numberOfCards,
   cinemaGenre,
   idOfGenre,
-  nameOfGenre,
-  frenchNameOfGenre,
   width,
   seeMoreButton,
   onClick,
 }) => {
-  const movies = useMovieByGenre(cinemaGenre, nameOfGenre);
+  const [movies, ] = useMovieByGenre("movie", idOfGenre);
   return (
     <CinemaContainerDecoration width={width}>
-      <TitleCategory title={frenchNameOfGenre} />
+      {console.log("party bam",movies)}
+      <TitleCategory title={cinemaGenre} />
       <CardsContainer
         cinemaList={movies}
         numberOfCards={numberOfCards}
@@ -27,7 +26,7 @@ const CinemaContainer = ({
       {seeMoreButton !== false ? (
         <>
           <div className="see-more-container">
-            <Link to={`/cinemabygenre/${nameOfGenre}`}>
+            <Link to={`/cinemabygenre/${idOfGenre}`}>
               <Button>voir plus</Button>
             </Link>
           </div>

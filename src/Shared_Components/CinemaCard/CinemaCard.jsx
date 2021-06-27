@@ -17,7 +17,7 @@ const CinemaCard = ({banner, movieProperty, onClick }) => {
           </div>
         ) : (
           <>
-          {console.log(movieProperty)}
+          {console.log("movies property",movieProperty)}
             <img src={urlPoster} alt={title} />
             <div className="details">
               <h3 className="title">{title}</h3>

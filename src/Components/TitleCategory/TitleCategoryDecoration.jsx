@@ -14,7 +14,7 @@ const TitleCategoryDecoration = styled.h3`
   padding: 0.4rem 0.4rem;
   border-left: 3px solid ${SECOND_COLOR};
   margin-left: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1.5rem;
   z-index: 1000000;
 `;
 

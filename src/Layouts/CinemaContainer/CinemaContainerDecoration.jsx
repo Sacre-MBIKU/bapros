@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CinemaContainerDecoration = styled.section`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: space-around;
@@ -24,7 +24,7 @@ const CinemaContainerDecoration = styled.section`
   }
 
   hr {
-    color: #11010176;
+    color: #fffffff4;
     font-size: 1px;
   }
 
