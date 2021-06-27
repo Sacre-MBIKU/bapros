@@ -13,11 +13,11 @@ const loaderAnimation = keyframes`
 `;
 
 const CinemaCardDecoration = styled.div`
-  min-width: 270px !important;
-  max-width: 300px !important;
+  min-width: 170px !important;
+  max-width: 270px !important;
   height: 360px;
   flex: 1;
-  opacity: 0.5;
+  opacity: 01;
   transform: scale(0.8);
   cursor: pointer;
   position: relative;
@@ -47,7 +47,9 @@ const CinemaCardDecoration = styled.div`
   }
 
   img {
-    min-width: 270px;
+    min-width: 270px !important;
+    max-width: 300px !important;
+    width: 100%;
     height: 360px;
     border-radius: 5px;
     transition: 2s;

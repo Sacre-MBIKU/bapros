@@ -3,22 +3,37 @@ import CinemaGenreList from "../../Components/CinemaGenreList/CinemaGenreList";
 import CinemaContainer from "../../Layouts/CinemaContainer/CinemaContainer";
 import Navbar from "../../Layouts/Navbar/Navbar";
 import CinemByGenreDecoration from "./CinemByGenreDecoration";
+import CinemaDescription from "../../Shared_Components/CinemaDescription/CinemaDescription";
+import { useParams } from "react-router-dom";
 
-const CinemByGenre = ({ genre }) => {
+const CinemByGenre = (props) => {
   const [genreListMenuState, setGenreListMenuState] = useState(false);
+  const [cinemaDescription, setCinemaDescription] = useState(false);
+  const cinemaNumberToList = 20;
+  let id = useParams();
+
+  const handleCinemaDescriptionState = () => {
+    setCinemaDescription(!cinemaDescription);
+    window.scrollTo(0, 0);
+  };
 
   const handleGenreList = () => {
     return setGenreListMenuState(!genreListMenuState);
   };
+
   return (
     <CinemByGenreDecoration genreListMenuState={genreListMenuState}>
+      {console.dir("praaaaaams", id.cinemaGenreId)}
       <Navbar secondAppMode={true} />
       <main>
         <div className="cards-container-wrapper">
           <CinemaContainer
-            cinemaGenre="A la une"
+            frenchNameOfGenre="Mieux notés"
+            cinemaGenre="movie"
+            nameOfGenre={id.cinemaGenreId}
             width="true"
             seeMoreButton={false}
+            numberOfCards={cinemaNumberToList}
           />
           <CinemaGenreList
             genreListMenuState={genreListMenuState}
@@ -29,6 +44,11 @@ const CinemByGenre = ({ genre }) => {
           </div>
         </div>
       </main>
+
+      <CinemaDescription
+        cinemaDescription={cinemaDescription}
+        onClick={handleCinemaDescriptionState}
+      />
     </CinemByGenreDecoration>
   );
 };
