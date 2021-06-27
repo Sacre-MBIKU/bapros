@@ -1,6 +1,5 @@
 import { useState } from "react";
 import useScroll from "../../hooks/useScroll";
-import CinemaContainer from "../../Layouts/CinemaContainer/CinemaContainer";
 import HomeHeroSection from "../../Layouts/HomeHeroSection/HomeHeroSection";
 import HomeDecoration from "./HomeDecoration";
 import CinemaDescription from "../../Shared_Components/CinemaDescription/CinemaDescription";
@@ -8,7 +7,6 @@ import CinemaDescription from "../../Shared_Components/CinemaDescription/CinemaD
 const Home = () => {
   const [navBarYPosition, getNavBarPosition] = useScroll(false);
   const [cinemaDescription, setCinemaDescription] = useState(false);
-  const cinemaNumberToList = 4;
 
   const handleCinemaDescriptionState = () => {
     setCinemaDescription(!cinemaDescription);
@@ -22,21 +20,10 @@ const Home = () => {
         navBarYPosition={navBarYPosition}
         pageTitle="Tout le septième art dans ton "
       />
-      <CinemaContainer
-        frenchNameOfGenre="Mieux notés"
-        cinemaGenre="movie"
-        nameOfGenre="top_rated"
-        numberOfCards={cinemaNumberToList}
+      <CinemaDescription
+        cinemaDescription={cinemaDescription}
         onClick={handleCinemaDescriptionState}
       />
-      <CinemaContainer
-        frenchNameOfGenre="A venir"
-        cinemaGenre="movie"
-        nameOfGenre="upcoming"
-        numberOfCards={cinemaNumberToList}
-        onClick={handleCinemaDescriptionState}
-      />
-      <CinemaDescription cinemaDescription = {cinemaDescription} onClick = {handleCinemaDescriptionState} />
     </HomeDecoration>
   );
 };
