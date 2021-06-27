@@ -1,6 +1,6 @@
 import CinemaCardDecoration from "./CinemaCardDecoration";
 
-const CinemaCard = ({banner, movieProperty, loading, onClick }) => {
+const CinemaCard = ({banner, movieProperty, onClick }) => {
   let urlPoster = banner;
   let title = "";
   if(movieProperty !== undefined) {
@@ -11,12 +11,13 @@ const CinemaCard = ({banner, movieProperty, loading, onClick }) => {
   return (
     <>
       <CinemaCardDecoration onClick={onClick}>
-        {movieProperty === [] ? (
+        {movieProperty === undefined ? (
           <div className="loader">
             <h3 className="title">{title}</h3>
           </div>
         ) : (
           <>
+          {console.log(movieProperty)}
             <img src={urlPoster} alt={title} />
             <div className="details">
               <h3 className="title">{title}</h3>

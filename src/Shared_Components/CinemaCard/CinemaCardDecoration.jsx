@@ -13,7 +13,7 @@ const loaderAnimation = keyframes`
 `;
 
 const CinemaCardDecoration = styled.div`
-  min-width: 170px !important;
+  min-width: 230px !important;
   max-width: 270px !important;
   height: 360px;
   flex: 1;
