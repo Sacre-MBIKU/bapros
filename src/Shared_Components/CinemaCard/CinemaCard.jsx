@@ -1,10 +1,10 @@
 import CinemaCardDecoration from "./CinemaCardDecoration";
 
-const CinemaCard = ({banner, movieProperty, onClick }) => {
+const CinemaCard = ({banner, movieProperty, onClick, tv }) => {
   let urlPoster = banner;
   let title = "";
   if(movieProperty !== undefined) {
-     title = movieProperty.title;
+    title = tv ?  movieProperty.name : movieProperty.title;
      urlPoster = `https://image.tmdb.org/t/p/w500${movieProperty.poster_path}`;
   }
   
@@ -17,7 +17,6 @@ const CinemaCard = ({banner, movieProperty, onClick }) => {
           </div>
         ) : (
           <>
-          {console.log("movies property",movieProperty)}
             <img src={urlPoster} alt={title} />
             <div className="details">
               <h3 className="title">{title}</h3>

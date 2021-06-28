@@ -7,21 +7,23 @@ import CinemaContainerDecoration from "./CinemaContainerDecoration";
 
 const CinemaContainer = ({
   numberOfCards,
+  cinemaTitle,
   cinemaGenre,
   idOfGenre,
   width,
   seeMoreButton,
   onClick,
+  tv
 }) => {
-  const [movies, ] = useMovieByGenre("movie", idOfGenre);
+  const [movies, ] = useMovieByGenre(cinemaGenre, idOfGenre);
   return (
     <CinemaContainerDecoration width={width}>
-      {console.log("party bam",movies)}
-      <TitleCategory title={cinemaGenre} />
+      <TitleCategory title={cinemaTitle} />
       <CardsContainer
         cinemaList={movies}
         numberOfCards={numberOfCards}
         onClick={onClick}
+        tv = {tv}
       />
       {seeMoreButton !== false ? (
         <>

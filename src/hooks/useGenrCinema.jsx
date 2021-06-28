@@ -13,7 +13,6 @@ const useGenrCinema = (cinemaGenre) => {
       })
       .then((listOfGenres) => {
         setGenreCinemaList(listOfGenres.genres);
-        console.dir("movies", listOfGenres.genres);
         setLoading(false);
       });
   }, [url]);
