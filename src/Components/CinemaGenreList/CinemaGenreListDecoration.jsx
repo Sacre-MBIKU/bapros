@@ -7,16 +7,16 @@ import {
 const CinemaGenreListDecoration = styled.aside`
   position: fixed;
   width: 32%;
-  height: auto;
+  min-height: 20%;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   padding-top: 1rem;
   padding-left: 1rem;
-  height: 20rem;
   background-color: #0a0c1d;
   border-left: 3px solid ${SECOND_COLOR};
   right: 2%;
-  top: 29%;
+  top: 20%;
 
   h3 {
     color: ${SECOND_COLOR};
@@ -24,14 +24,21 @@ const CinemaGenreListDecoration = styled.aside`
   }
   ul {
     padding-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
   }
 
   li {
     margin-top: 1rem;
+    min-width: 6rem;
+    margin-right: 3rem;
+    border-bottom: 1px solid ${SECOND_COLOR};
   }
 
   a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: ${FIRST_COLOR};
     transition: all 0.5s ease-in;
 

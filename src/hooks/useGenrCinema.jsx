@@ -15,7 +15,8 @@ const useGenrCinema = (cinemaGenre) => {
         setGenreCinemaList(listOfGenres.genres);
         setLoading(false);
       });
-  }, [url]);
+      return <div>{loading ? <p>loading...</p> : <p>Fetched!!</p>}</div>
+  }, [url, loading]);
 
   if (loading === false) {
     return genreCinemaList;

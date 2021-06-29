@@ -13,9 +13,10 @@ const CinemaContainer = ({
   width,
   seeMoreButton,
   onClick,
-  tv
+  tv,
 }) => {
-  const [movies, ] = useMovieByGenre(cinemaGenre, idOfGenre);
+  const [movies] = useMovieByGenre(cinemaGenre, idOfGenre);
+
   return (
     <CinemaContainerDecoration width={width}>
       <TitleCategory title={cinemaTitle} />
@@ -23,7 +24,7 @@ const CinemaContainer = ({
         cinemaList={movies}
         numberOfCards={numberOfCards}
         onClick={onClick}
-        tv = {tv}
+        tv={tv}
       />
       {seeMoreButton !== false ? (
         <>

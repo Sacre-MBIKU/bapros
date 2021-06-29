@@ -1,32 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import CinemaGenreListDecoration from "./CinemaGenreListDecoration";
 import CrossIcon from "../../Shared_Components/CrossIcon/CrossIcon";
 
-const CinemaGenreList = ({ genreListMenuState, onClick }) => {
+const CinemaGenreList = ({ genreListMenuState, onClick, listOfGenre }) => {
+  const history = useHistory();
+
   return (
     <CinemaGenreListDecoration genreListMenuState={genreListMenuState}>
       <h3>Choisr le genre</h3>
       <ul className="genre-list">
         <CrossIcon genreListMenuState={genreListMenuState} onClick={onClick} />
-        <li>
-          <Link to="">1. A la une</Link>
-        </li>
-
-        <li>
-          <Link to="">2. Populaire</Link>
-        </li>
-
-        <li>
-          <Link to="">2. Populaire</Link>
-        </li>
-
-        <li>
-          <Link to="">2. Populaire</Link>
-        </li>
-
-        <li>
-          <Link to="">2. Populaire</Link>
-        </li>
+        {listOfGenre === undefined
+          ? "loading"
+          : listOfGenre.map((list, key) => (
+              <li>
+                <Link
+                  key={key}
+                  to={""}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    history.push(`/cinemabygenre/${list.id}`);
+                  }}
+                >
+                  {" "}
+                  {list.name}{" "}
+                </Link>
+              </li>
+            ))}
       </ul>
     </CinemaGenreListDecoration>
   );
