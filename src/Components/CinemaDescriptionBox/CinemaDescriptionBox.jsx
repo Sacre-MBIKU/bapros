@@ -2,22 +2,30 @@ import CinemaDescriptionBoxDescriptionDecoration from "./CinemaDescriptionBoxDec
 import HeroSection from "../../Shared_Components/HeroSection/HeroSection";
 import PageTitle from "../../Shared_Components/PageTitle/PageTitle";
 import CrossIcon from "../../Shared_Components/CrossIcon/CrossIcon";
-import CinemaCard from "../../Shared_Components/CinemaCard/CinemaCard";
+import CinemaCardCredits from "../../Shared_Components/CinemaCard/CinemaCardCredits";
 import releaer from "../../assets/backgrounds/releaser.jpg";
 const CinemaDescriptionBox = ({
   pageTitle,
   onClick,
   cinemaDescription,
   movieCredits,
+  movieCasting,
 }) => {
   const banner =
     movieCredits === undefined
       ? ""
       : `https://image.tmdb.org/t/p/w500${movieCredits.backdrop_path}`;
+  const bannerDirector =
+    movieCasting.director === undefined
+      ? ""
+      : `https://image.tmdb.org/t/p/w500${movieCasting.director.profile_path}`;
+  const actors =
+    movieCasting.actors === undefined ? "" : Object.values(movieCasting.actors);
   return (
     <CinemaDescriptionBoxDescriptionDecoration
       cinemaDescription={cinemaDescription}
     >
+      {console.log("director", movieCasting.director)}
       <HeroSection banner={banner} modalBox />
       <CrossIcon modalCross onClick={onClick} />
       <PageTitle modalBox>
@@ -34,7 +42,12 @@ const CinemaDescriptionBox = ({
       <div className="cinema-overview-infos">
         <div className="cinema-overview--releaser">
           <h4 className="releaser-title">Réalisateur</h4>
-          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCardCredits
+            movieProperty={
+              movieCasting === undefined ? "chargement" : movieCasting
+            }
+            banner={bannerDirector}
+          />
         </div>
         <ul className="cinema-overview--more-info">
           <li>
@@ -59,20 +72,21 @@ const CinemaDescriptionBox = ({
       <div className="cinema-overview-casting-actor">
         <h4 className="casting-actor--title">Casting</h4>
         <div className="casting-actor--list">
-          <CinemaCard movieProperty={[]} banner={releaer} />
-          <CinemaCard movieProperty={[]} banner={releaer} />
-          <CinemaCard movieProperty={[]} banner={releaer} />
-          <CinemaCard movieProperty={[]} banner={releaer} />
+          {movieCasting.actors === undefined
+            ? ""
+            : actors.map((actor) => (
+                <CinemaCardCredits movieProperty={actor} banner={releaer} />
+              ))}
         </div>
       </div>
 
       <div className="cinema-overview--similar-cinema">
         <h4 className="similar-cinema--title">Affiches Similaires</h4>
         <div className="similar-cinema--list">
-          <CinemaCard movieProperty={[]} banner={releaer} />
-          <CinemaCard movieProperty={[]} banner={releaer} />
-          <CinemaCard movieProperty={[]} banner={releaer} />
-          <CinemaCard movieProperty={[]} banner={releaer} />
+          <CinemaCardCredits movieProperty={[]} banner={releaer} />
+          <CinemaCardCredits movieProperty={[]} banner={releaer} />
+          <CinemaCardCredits movieProperty={[]} banner={releaer} />
+          <CinemaCardCredits movieProperty={[]} banner={releaer} />
         </div>
       </div>
     </CinemaDescriptionBoxDescriptionDecoration>

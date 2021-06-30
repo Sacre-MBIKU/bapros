@@ -19,7 +19,7 @@ const CinemaCardDecoration = styled.div`
   flex: 1;
   opacity: 01;
   transform: scale(0.8);
-  cursor: pointer;
+  cursor: ${({noCursor}) => noCursor ? "" : "pointer"};
   position: relative;
   border-radius: 5px;
   position: relative;

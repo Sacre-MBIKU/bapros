@@ -1,16 +1,24 @@
 import CinemaCardDecoration from "./CinemaCardDecoration";
 
-const CinemaCard = ({ banner, movieProperty, onClick, tv }) => {
+const CinemaCardCredits = ({ banner, movieProperty, onClick, tv }) => {
   let urlPoster = banner;
   let title = "";
   if (movieProperty !== undefined) {
-    title = tv ? movieProperty.name : movieProperty.title;
-    urlPoster = `https://image.tmdb.org/t/p/w500${movieProperty.poster_path}`;
+    title =
+      movieProperty.director === undefined
+        ? movieProperty.name
+        : movieProperty.director.name;
+    urlPoster =
+      movieProperty.director === undefined
+        ? `https://image.tmdb.org/t/p/w500${movieProperty.profile_path}`
+        : `https://image.tmdb.org/t/p/w500${movieProperty.director.profile_path}`;
+    console.log("your director", urlPoster);
   }
 
   return (
     <>
       <CinemaCardDecoration
+        noCursor
         data-id={movieProperty !== undefined ? movieProperty.id : 0}
         onClick={onClick}
       >
@@ -32,4 +40,4 @@ const CinemaCard = ({ banner, movieProperty, onClick, tv }) => {
     </>
   );
 };
-export default CinemaCard;
+export default CinemaCardCredits;
