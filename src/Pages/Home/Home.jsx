@@ -9,9 +9,12 @@ import useScrollInfinite from "../../hooks/useScrollInfinite";
 const Home = () => {
   const [navBarYPosition, getNavBarPosition] = useScroll(false);
   const [cinemaDescription, setCinemaDescription] = useState(false);
+  const [currentMovieId, setCurrentMovieId] = useState(-1);
   const [indexGenreToRender, setIsScrollTouchBottom] = useScrollInfinite();
 
-  const handleCinemaDescriptionState = () => {
+  const handleCinemaDescriptionState = (event) => {
+    setCurrentMovieId(event.currentTarget.dataset.id);
+    console.dir("currentTarget",event.currentTarget.dataset.id);
     setCinemaDescription(!cinemaDescription);
     window.scrollTo(0, 0);
   };
@@ -24,11 +27,19 @@ const Home = () => {
         navBarYPosition={navBarYPosition}
         pageTitle="Tout le septième art dans ton "
       />
-      <HomeCinemaList currentGenreIndex = {indexGenreToRender}  onClick={handleCinemaDescriptionState}/>
-      <CinemaDescription
-        cinemaDescription={cinemaDescription}
+      <HomeCinemaList
+        currentGenreIndex={indexGenreToRender}
         onClick={handleCinemaDescriptionState}
       />
+      {currentMovieId !== -1 ? (
+        <CinemaDescription
+          cinemaDescription={cinemaDescription}
+          currentMovieId={currentMovieId}
+          onClick={handleCinemaDescriptionState}
+        />
+      ) : (
+        ""
+      )}
     </HomeDecoration>
   );
 };

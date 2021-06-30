@@ -1,9 +1,12 @@
 import CinemaDescriptionDecoration from "./CinemaDescriptionDecoration";
 import CinemaDescriptionBox from "../../Components/CinemaDescriptionBox/CinemaDescriptionBox";
-const CinemaDescription = ({ cinemaDescription, onClick }) => {
+import useMovieCredits from "../../hooks/useMovieCredits";
+const CinemaDescription = ({ cinemaDescription, onClick, currentMovieId }) => {
+  const movieCredits = useMovieCredits(currentMovieId);
   return (
     <CinemaDescriptionDecoration cinemaDescription={cinemaDescription}>
-      <CinemaDescriptionBox pageTitle="Spiderman Homecoming" onClick = {onClick} />
+      {console.dir(currentMovieId)}
+      <CinemaDescriptionBox movieCredits = {movieCredits} pageTitle={movieCredits.title} onClick={onClick} />
     </CinemaDescriptionDecoration>
   );
 };

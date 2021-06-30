@@ -8,7 +8,7 @@ const HeroSectionDecoration = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: linear-gradient(to top, #080a16, rgba(117, 19, 93, .4)),
+  background-image: linear-gradient(to top, #080a16, rgba(117, 19, 93, .0)),
     url("${({ banner }) => banner || bannerSection}");
   background-size: cover;
   background-position: center;

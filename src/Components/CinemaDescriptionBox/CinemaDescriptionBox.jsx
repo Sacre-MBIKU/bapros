@@ -3,41 +3,31 @@ import HeroSection from "../../Shared_Components/HeroSection/HeroSection";
 import PageTitle from "../../Shared_Components/PageTitle/PageTitle";
 import CrossIcon from "../../Shared_Components/CrossIcon/CrossIcon";
 import CinemaCard from "../../Shared_Components/CinemaCard/CinemaCard";
-import banner from "../../assets/backgrounds/banner.jpg";
 import releaer from "../../assets/backgrounds/releaser.jpg";
-const CinemaDescriptionBox = ({ pageTitle , onClick, cinemaDescription}) => {
+const CinemaDescriptionBox = ({
+  pageTitle,
+  onClick,
+  cinemaDescription,
+  movieCredits,
+}) => {
+  const banner =
+    movieCredits === undefined
+      ? ""
+      : `https://image.tmdb.org/t/p/w500${movieCredits.backdrop_path}`;
   return (
-    <CinemaDescriptionBoxDescriptionDecoration cinemaDescription = {cinemaDescription}>
+    <CinemaDescriptionBoxDescriptionDecoration
+      cinemaDescription={cinemaDescription}
+    >
       <HeroSection banner={banner} modalBox />
-      <CrossIcon modalCross onClick = {onClick}/>
+      <CrossIcon modalCross onClick={onClick} />
       <PageTitle modalBox>
-        <span>{pageTitle}</span>
+        <span>{movieCredits === undefined ? "chargement" : pageTitle}</span>
       </PageTitle>
       <button className="play-button"></button>
       <div className="cinema-overview-container">
         <h4 className="cinema-overview--title">Déscription</h4>
         <p className="cinema-overview--content">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, non
-          molestias assumenda, illo nihil fugit laboriosam ab quos rerum
-          adipisci voluptatum ut, quidem quisquam ex esse dolores. Vel eum, quas
-          sapiente modi aut illo quos obcaecati hic? Facere magni deserunt
-          voluptatum nisi quo vitae, excepturi animi eius voluptate quia illo
-          totam incidunt veritatis aspernatur cum suscipit. Possimus, harum
-          recusandae odit iusto voluptates, eum dignissimos, at nulla sit natus
-          debitis laboriosam iure. Nesciunt fugit reiciendis fugiat vel ex
-          dolore neque minima aliquam numquam rem. Officiis, officia sed eius
-          dolorum nostrum distinctio vitae ab nisi, iure, iste minima modi
-          numquam ex praesentium. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Beatae, non molestias assumenda, illo nihil fugit
-          laboriosam ab quos rerum adipisci voluptatum ut, quidem quisquam ex
-          esse dolores. Vel eum, quas sapiente modi aut illo quos obcaecati hic?
-          Facere magni deserunt voluptatum nisi quo vitae, excepturi animi eius
-          voluptate quia illo totam incidunt veritatis aspernatur cum suscipit.
-          Possimus, harum recusandae odit iusto voluptates, eum dignissimos, at
-          nulla sit natus debitis laboriosam iure. Nesciunt fugit reiciendis
-          fugiat vel ex dolore neque minima aliquam numquam rem. Officiis,
-          officia sed eius dolorum nostrum distinctio vitae ab nisi, iure, iste
-          minima modi numquam ex praesentium.
+          {movieCredits === undefined ? "chargement" : movieCredits.overview}
         </p>
       </div>
 
@@ -47,9 +37,22 @@ const CinemaDescriptionBox = ({ pageTitle , onClick, cinemaDescription}) => {
           <CinemaCard movieProperty={[]} banner={releaer} />
         </div>
         <ul className="cinema-overview--more-info">
-          <li>Catégorie : Action / Aventure</li>
-          <li>Notes : 4.3</li>
-          <li>Compagnie : Marvel</li>
+          <li>
+            Catégorie :{" "}
+            {movieCredits === undefined ? "chargement" : movieCredits.genres}
+          </li>
+          <li>
+            Notes :{" "}
+            {movieCredits === undefined
+              ? "chargement"
+              : movieCredits.popularity / 1000}
+          </li>
+          <li>
+            Compagnie :{" "}
+            {movieCredits === undefined
+              ? "chargement"
+              : movieCredits.production_companies}
+          </li>
         </ul>
       </div>
 

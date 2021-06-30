@@ -30,11 +30,14 @@ const HomeCinemaList = ({ currentGenreIndex, onClick }) => {
 
   return (
     <HomeCinemaListDecoration>
-      {console.log("fetched movies", fetchedMovies)}
       {loading === true
         ? loaderCards
         : allMovies.map((movie, key) => (
-            <CinemaCard key={key} movieProperty={movie} onClick = {onClick}></CinemaCard>
+            <CinemaCard
+              key={key}
+              movieProperty={movie}
+              onClick={onClick}
+            ></CinemaCard>
           ))}
     </HomeCinemaListDecoration>
   );

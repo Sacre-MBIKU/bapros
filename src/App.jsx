@@ -12,11 +12,12 @@ const App = () => {
     <>
       <GlobalStyles />
       <Switch>
-        <Route path={"/cinemabygenre/:cinemaGenreId"} component = {CinemByGenre}>
-        </Route>
-        <Route component = {Movie}  path={"/movies"}>
-        </Route>
-        <Route path={"/series"} component = {Serie } />
+        <Route
+          path={"/cinemabygenre/:cinemaGenreId"}
+          component={CinemByGenre}
+        ></Route>
+        <Route component={Movie} path={"/movies"}></Route>
+        <Route path={"/series"} component={Serie} />
         <Route>
           <Home exact path={"/"} />
         </Route>
