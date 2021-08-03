@@ -15,7 +15,7 @@ const Navbar = ({ navBarYPosition, secondAppMode }) => {
     <NavbarDecoration navBarYPosition={navBarYPosition} secondAppMode = {secondAppMode}>
       <Logo secondAppMode = {secondAppMode}/>
       <MenuHamburger secondAppMode = {secondAppMode} onClick={toggleDevice} isDisplayed={smallDevice} />
-      <Menu secondAppMode = {secondAppMode} onClick={toggleDevice} isDisplayed={smallDevice} />
+      <Menu modalCross = {smallDevice} secondAppMode = {secondAppMode} onClick={toggleDevice} isDisplayed={smallDevice} />
     </NavbarDecoration>
   );
 };

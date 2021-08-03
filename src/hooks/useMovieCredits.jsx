@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useMovieCredits = (idOfMovie) => {
+const useMovieCredits = (genreCinema, idOfMovie) => {
   const [loading, setLoading] = useState(true);
   const [movieInfoCredits, setMovieInfoCredits] = useState([]);
   const api_key = "fb1dcf94078665e3203add8e98cca345";
-  const url = `https://api.themoviedb.org/3/movie/${idOfMovie}?api_key=${api_key}&language=fr-FR`;
+  const url = `https://api.themoviedb.org/3/${genreCinema}/${idOfMovie}?api_key=${api_key}&language=fr-FR`;
 
   useEffect(() => {
     fetch(url)
@@ -20,7 +20,8 @@ const useMovieCredits = (idOfMovie) => {
                 backdrop_path: data.backdrop_path,
                 popularity: data.popularity,
                 production_companies: data.production_companies === undefined ? "" : data.production_companies[0].name,
-                genres :data.genres === undefined ? "" : data.genres[0].name
+                genres :data.genres === undefined ? "" : data.genres[0].name,
+                release_date : data.release_date
               };
         }
         setMovieInfoCredits(results);

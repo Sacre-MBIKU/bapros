@@ -14,7 +14,6 @@ const Home = () => {
 
   const handleCinemaDescriptionState = (event) => {
     setCurrentMovieId(event.currentTarget.dataset.id);
-    console.dir("currentTarget",event.currentTarget.dataset.id);
     setCinemaDescription(!cinemaDescription);
     window.scrollTo(0, 0);
   };
@@ -33,6 +32,7 @@ const Home = () => {
       />
       {currentMovieId !== -1 ? (
         <CinemaDescription
+          genreCinema = "movie"
           cinemaDescription={cinemaDescription}
           currentMovieId={currentMovieId}
           onClick={handleCinemaDescriptionState}

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   BACKGROUND_COLOR,
   FIRST_COLOR,
@@ -7,14 +7,31 @@ import {
 import bannerButton from "../../assets/icons/play.svg";
 const CinemaDescriptionBoxDecoration = styled.article`
   width: 100%;
-  min-height: 500vh;
-  max-height: 800vh;
+  max-height: 550vh;
   background-color: ${BACKGROUND_COLOR};
   border: 3px solid ${SECOND_COLOR};
   display: ${({ cinemaDescription }) => (cinemaDescription ? "none" : "flex")};
   flex-wrap: wrap;
   position: relative;
   transition: all 0.5s ease-in;
+
+  .trailer-video {
+    display : none;
+    transition: all .8s ease-in;
+  }
+
+  ${({ trailerVideo }) =>
+    trailerVideo
+      ? css`
+          .trailer-video {
+            display: block;
+            position: absolute;
+            width: 100%;
+            min-height: 70vh;
+            z-index: 20000;
+          }
+        `
+      : ""}
 
   .play-button {
     position: absolute;
@@ -60,8 +77,7 @@ const CinemaDescriptionBoxDecoration = styled.article`
       width: 70%;
       font-size: 1rem;
       color: ${FIRST_COLOR};
-      min-height: auto;
-      @media (max-width: 384px), (max-height: 640px) {
+      @media (max-width: 384px) {
         font-size: 0.7rem;
       }
     }
@@ -123,8 +139,8 @@ const CinemaDescriptionBoxDecoration = styled.article`
 
   .cinema-overview-casting-actor {
     display: flex;
-    padding: 0 10%;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 
     .casting-actor--title {
@@ -136,6 +152,7 @@ const CinemaDescriptionBoxDecoration = styled.article`
 
     .casting-actor--list {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       width: 100%;
     }
@@ -156,14 +173,13 @@ const CinemaDescriptionBoxDecoration = styled.article`
 
     .similar-cinema--list {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       width: 100%;
     }
   }
 
   @media (max-width: 1140px) {
-    min-height: 750vh;
-
     .cinema-overview-casting-actor,
     .cinema-overview--similar-cinema {
       align-items: center;
@@ -175,27 +191,11 @@ const CinemaDescriptionBoxDecoration = styled.article`
     }
   }
 
-  @media (max-width: 800px), (max-height: 1280px) {
-    min-height: 450vh;
+  @media (max-width: 980px) {
+    max-height: 650vh;
   }
-  @media (max-width: 834px), (max-height: 1112px) {
-    min-height: 550vh;
-  }
-
-  @media (max-width: 768px), (max-height: 1024px) {
-    min-height: 300vh;
-  }
-
-  @media (max-width: 414px), (max-height: 896px) {
-    min-height: 650vh;
-  }
-
-  @media (max-width: 414px), (max-height: 736px) {
-    min-height: 750vh;
-  }
-
-  @media (max-width: 360px), (max-height: 640px) {
-    min-height: 780vh;
+  @media (max-width: 640px) {
+    max-height: 750vh;
   }
 `;
 

@@ -6,7 +6,7 @@ import {
 } from "../../Shared_Components/GlobalStyles.jsx/GlobalStyles";
 import seacrIcon from "../../assets/icons/search-icon.svg";
 
-const SearchBarDecoration = styled.div`
+const SearchBarDecoration = styled.form`
   width: 15rem;
   height: 2rem;
   display: flex;

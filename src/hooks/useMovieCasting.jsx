@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useMovieCasting = (idOfMovie) => {
+const useMovieCasting = (genreCinema,idOfMovie) => {
   const [loading, setLoading] = useState(true);
   const [movieInfoCredits, setMovieInfoCredits] = useState({});
   const api_key = "fb1dcf94078665e3203add8e98cca345";
-  const url = `https://api.themoviedb.org/3/movie/${idOfMovie}/credits?api_key=${api_key}&language=fr-FR`;
+  const url = `https://api.themoviedb.org/3/${genreCinema}/${idOfMovie}/credits?api_key=${api_key}&language=fr-FR`;
 
   useEffect(() => {
     fetch(url)

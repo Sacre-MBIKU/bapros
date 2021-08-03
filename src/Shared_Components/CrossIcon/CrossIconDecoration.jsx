@@ -19,7 +19,7 @@ const CrossIconDecoration = styled.li`
     modalCross
       ? css`
           position: absolute;
-          top: 2%;
+          top: 8%;
           right: 5%;
           z-index: 3000000;
 
@@ -27,7 +27,7 @@ const CrossIconDecoration = styled.li`
             width: 2rem;
           }
           @media (max-width: 800px), (max-height: 1280px) {
-            top: .5%;
+            top: 4%;
     }
         `
       : ""}
@@ -37,7 +37,7 @@ const CrossIconDecoration = styled.li`
     ${({ modalCross }) =>
     modalCross
       ? css`
-          top: .3%;
+          top: 4%;
           right: 5%;
 
           img {

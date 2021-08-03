@@ -6,8 +6,7 @@ const PageTitleDecoration = styled.h1`
   text-align: center;
   width: 40%;
   left: 10%;
-  top: ${({ modalBox }) => (modalBox ? "9%" : "50%")};
-  transform: translateY(-50%);
+  top: ${({ modalBox }) => modalBox ? "-20rem" : "50%"};
   color: ${FIRST_COLOR};
   font-size: 2rem;
   font-weight: bold;
@@ -21,6 +20,7 @@ const PageTitleDecoration = styled.h1`
   ${({ modalBox }) =>
     modalBox
       ? css`
+      top : 10rem;
           @media (max-width: 690px) {
             font-size: 1.2rem;
           }

@@ -6,6 +6,7 @@ const CinemaCard = ({ banner, movieProperty, onClick, tv }) => {
   if (movieProperty !== undefined) {
     title = tv ? movieProperty.name : movieProperty.title;
     urlPoster = `https://image.tmdb.org/t/p/w500${movieProperty.poster_path}`;
+    console.log("similar movies", title)
   }
 
   return (

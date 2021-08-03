@@ -1,6 +1,6 @@
 import CinemaCardDecoration from "./CinemaCardDecoration";
 
-const CinemaCardCredits = ({ banner, movieProperty, onClick, tv }) => {
+const CinemaCardCredits = ({ banner, movieProperty, onClick}) => {
   let urlPoster = banner;
   let title = "";
   if (movieProperty !== undefined) {
